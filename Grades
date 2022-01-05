@@ -1,0 +1,80 @@
+public class Grades
+{
+    private double[] discussionsAmount;
+    private double[] hwAmount;
+    private double[] examAmount;
+    private double endGrade;
+    private double discussionWeight;
+    private double hwWeight;
+    private double examWeight;
+
+    public void setDiscussionsAmount(double[] discussionsAmount)
+    {
+        this.discussionsAmount = discussionsAmount;
+    }
+
+    public void setHwAmount(double[] hwAmount) {
+        this.hwAmount = hwAmount;
+    }
+
+    public void setExamAmount(double[] examAmount) {
+        this.examAmount = examAmount;
+    }
+
+    public void setDiscussionWeight(double discussionWeight) {
+        this.discussionWeight = discussionWeight;
+    }
+
+    public void setHwWeight(double hwWeight) {
+        this.hwWeight = hwWeight;
+    }
+
+    public void setExamWeight(double examWeight) {
+        this.examWeight = examWeight;
+    }
+
+    public double[] getDiscussionsAmount() {
+        return discussionsAmount;
+    }
+
+    public double getDiscussionAverage() {
+        double sum = 0;
+        for (double l: discussionsAmount)
+        {
+            sum = l + sum;
+        }
+
+        return sum / discussionsAmount.length;
+    }
+
+    public double[] getHwAmount() {
+        return hwAmount;
+    }
+
+    public double getHwAverage() {
+        double sum = 0;
+        for (double l: hwAmount)
+        {
+            sum = l + sum;
+        }
+        return sum / hwAmount.length;
+    }
+
+    public double[] getExamAmount() {
+        return examAmount;
+    }
+
+    public double getExamAverage() {
+        double sum = 0;
+        for (double l: examAmount)
+        {
+            sum = l + sum;
+        }
+        return sum / examAmount.length;
+    }
+
+    public double getEndGrade() {
+
+        return endGrade =discussionWeight * getDiscussionAverage() + hwWeight * getHwAverage() + examWeight * getExamAverage();
+    }
+}
