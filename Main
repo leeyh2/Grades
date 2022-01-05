@@ -1,0 +1,29 @@
+import java.util.Arrays;
+
+public class Main
+{
+
+    public static void main(String[] args)
+    {
+        run();
+    }
+
+    private static void run()
+    {
+        Grades c = new Grades(); // creates grades object
+        c.setDiscussionWeight(.20); //setters for weighted grades
+        c.setHwWeight(.30);
+        c.setExamWeight(.50);
+        c.setDiscussionsAmount(new double[]{100, 100, 100, 79, 99}); // input grades
+        c.setHwAmount(new double []{79,80,95,100});
+        c.setExamAmount(new double[]{85, 95});
+        System.out.println(Arrays.toString(c.getDiscussionsAmount()));
+        System.out.println("Discussion average: " + c.getDiscussionAverage());
+        System.out.println(Arrays.toString(c.getHwAmount()));
+        System.out.println("Homework average: " + c.getHwAverage());
+        System.out.println(Arrays.toString(c.getExamAmount()));
+        System.out.println("Exam average: " + c.getExamAverage());
+        System.out.println("Final grade of class: " + c.getEndGrade());
+
+    }
+}
